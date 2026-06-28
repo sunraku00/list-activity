@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Activity — PWL Project Akhir</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <h1>📋 List Activity</h1>
+      <p>Pemrograman Web Lanjut — Project Akhir</p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Statistik Aktivitas -->
+    <div class="stats-container">
+      <div class="stat-card">
+        <h3 id="stat-total" class="text-purple">0</h3>
+        <p>Total Aktivitas</p>
+      </div>
+      <div class="stat-card">
+        <h3 id="stat-done" class="text-green">0</h3>
+        <p>Selesai</p>
+      </div>
+      <div class="stat-card">
+        <h3 id="stat-pending" class="text-orange">0</h3>
+        <p>Belum Selesai</p>
+      </div>
+    </div>
+
+    <!-- Search Aktivitas -->
+    <div class="search-card">
+      <input type="text" id="input-search" placeholder="🔍 Cari nama aktivitas...">
+    </div>
+
+    <!-- Form tambah aktivitas -->
+    <div class="form-card">
+      <h2>Tambah yang harus dilakukan</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="input-title">Masukkan hal yang akan dilakukan</label>
+          <input type="text" id="input-title" placeholder="Contoh: Mengerjakan Project Akhir PWL">
+        </div>
+        <div class="form-group">
+          <label for="input-deadline">Masukkan tanggal harus selesai</label>
+          <input type="date" id="input-deadline">
+        </div>
+        <div class="form-group" style="flex: 1.5; min-width: 200px;">
+          <label for="input-note">Catatan Singkat (Opsional)</label>
+          <input type="text" id="input-note" placeholder="Catatan kecil...">
+        </div>
+        <button class="btn-submit" id="btn-submit">Submit</button>
+      </div>
+      <div class="error-msg" id="error-msg"></div>
+    </div>
+
+    <!-- Daftar aktivitas yang belum selesai -->
+    <div class="list-section">
+      <div class="list-header">
+        Yang harus dilakukan
+        <span class="list-count" id="count-pending">0</span>
+      </div>
+      <div id="pending-list"></div>
+    </div>
+
+    <!-- Daftar aktivitas yang sudah selesai -->
+    <div class="list-section">
+      <div class="list-header">
+        Yang sudah dilakukan
+        <span class="list-count" id="count-done">0</span>
+      </div>
+      <div id="done-list"></div>
+    </div>
+
+  </div>
+
+  <!-- activity.js harus di-load lebih dulu karena app.js menggunakan class Activity -->
+  <script src="activity.js"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
